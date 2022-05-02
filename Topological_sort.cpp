@@ -26,21 +26,22 @@ int main()
         indegree[b]++;
     }
     int solution[n] = {0};
-    int k = 0;
-    int count = 1;
+    int k = 0; // for maintaining solution-array index
+    int count = 1; // for terminating the while loop
     while (count != n)
     {
-        count = 1;
+        //count = 1;
         for (int i = 1; i <= n; i++)
         {
-            if(indegree[i]==INT_MAX)
-            {
-                count++;
-                continue;
-            }
+        //     if(indegree[i]==INT_MAX)
+        //     {
+        //         count++;
+        //         continue;
+        //     }
             if (indegree[i] == 0)
             {
                 indegree[i]=INT_MAX;
+                count++;
                 for (int j = 1; j <= n; j++)
                 {
                     if (direction[i][j] == 1)
